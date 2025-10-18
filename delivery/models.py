@@ -9,7 +9,7 @@ class Customer(models.Model):
     address = models.CharField(max_length = 50)
     
 class Restaurant(models.Model):
-    name = models.CharField(max_length = 20)
+    name = models.CharField(max_length = 120)
     picture = models.URLField(max_length = 200, default="https://wallpaperaccess.com/full/7066805.jpg")
     cuisine = models.CharField(max_length = 200)
     rating = models.FloatField()
