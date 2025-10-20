@@ -10,7 +10,14 @@ class Customer(models.Model):
     
 class Restaurant(models.Model):
     name = models.CharField(max_length = 120)
-    picture = models.URLField(max_length = 200, default="https://wallpaperaccess.com/full/7066805.jpg")
+    picture = models.URLField(max_length = 500, default="https://wallpaperaccess.com/full/7066805.jpg")
     cuisine = models.CharField(max_length = 200)
     rating = models.FloatField()
 
+class Item(models.Model):
+    restaurant = models.ForeignKey(Restaurant, on_delete = models.CASCADE, related_name = "items")
+    name = models.CharField(max_length = 20)
+    picture = models.URLField(max_length = 500, default="https://wallpaperaccess.com/full/7066805.jpg")
+    description = models.CharField(max_length = 200)
+    price = models.FloatField()
+    is_veg = models.BooleanField(default = True)
