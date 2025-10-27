@@ -6,7 +6,7 @@
     <title>Customer page</title>
 </head>
 <body>
- <h1>Welcome Customer</h1>
+ <h1>Welcome {{username}}!</h1>
     <table border="1">
         <thead>
             <tr>
@@ -28,7 +28,7 @@
                 <td>{{ restaurant.cuisine }}</td>
                 <td>{{ restaurant.rating }}/5</td>
                 <td>
-                    <a href="{% url 'view_menu' restaurant.id %}">View Menu</a>
+                    <a href="{% url 'view_menu' restaurant.id username %}">View Menu</a>
                     <br>
                 </td>
             </tr>
